@@ -1,0 +1,2104 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >osmtogeojson (v3.0.0-beta.0)</a>
+</h1>
+<h4>convert OSM to geojson</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.osmtogeojson">module osmtogeojson</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.osmtogeojson">
+            function <span class="apidocSignatureSpan"></span>osmtogeojson
+            <span class="apidocSignatureSpan">(e, t)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom">
+            function <span class="apidocSignatureSpan">osmtogeojson.</span>lodash_custom
+            <span class="apidocSignatureSpan">{{signature}}</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.toGeojson">
+            function <span class="apidocSignatureSpan">osmtogeojson.</span>toGeojson
+            <span class="apidocSignatureSpan">( data, options, featureCallback )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">osmtogeojson.</span>parse_osmxml</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.osmtogeojson.lodash_custom">module osmtogeojson.lodash_custom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.lodash_custom">
+            function <span class="apidocSignatureSpan">osmtogeojson.</span>lodash_custom
+            <span class="apidocSignatureSpan">{{signature}}</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom._">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>_
+            <span class="apidocSignatureSpan">{{signature}}</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.clone">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>clone
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.compact">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>compact
+            <span class="apidocSignatureSpan">(array)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.each">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>each
+            <span class="apidocSignatureSpan">(collection, iteratee)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.eq">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>eq
+            <span class="apidocSignatureSpan">(value, other)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.forEach">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>forEach
+            <span class="apidocSignatureSpan">(collection, iteratee)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.get">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>get
+            <span class="apidocSignatureSpan">(object, path, defaultValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.hasIn">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>hasIn
+            <span class="apidocSignatureSpan">(object, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.identity">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>identity
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isArguments">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isArguments
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isArray">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isArrayLike">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isArrayLike
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isArrayLikeObject">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isArrayLikeObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isBuffer">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isBuffer
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isEmpty">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isEmpty
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isFunction">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isFunction
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isLength">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isLength
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isObject">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isObjectLike">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isObjectLike
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isPlainObject">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isPlainObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isSymbol">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isSymbol
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.isTypedArray">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isTypedArray
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.iteratee">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>iteratee
+            <span class="apidocSignatureSpan">(func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.keys">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>keys
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.keysIn">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>keysIn
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.memoize">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>memoize
+            <span class="apidocSignatureSpan">(func, resolver)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.merge">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>merge
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.property">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>property
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.stubArray">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>stubArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.stubFalse">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>stubFalse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.toPlainObject">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>toPlainObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.lodash_custom.toString">
+            function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>toString
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>VERSION</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.osmtogeojson.osmtogeojson">module osmtogeojson.osmtogeojson</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.osmtogeojson.osmtogeojson">
+            function <span class="apidocSignatureSpan">osmtogeojson.</span>osmtogeojson
+            <span class="apidocSignatureSpan">(e, t)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.osmtogeojson.toGeojson">
+            function <span class="apidocSignatureSpan">osmtogeojson.osmtogeojson.</span>toGeojson
+            <span class="apidocSignatureSpan">(e, t)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.osmtogeojson.parse_osmxml">module osmtogeojson.parse_osmxml</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_done</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_lowerCaseAttributeNames</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_lowerCaseTagNames</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.parse_osmxml.getJSON">
+            function <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>getJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.parse_osmxml.parseFromString">
+            function <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>parseFromString
+            <span class="apidocSignatureSpan">(xml_str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>startIndex</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_attribs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_cbs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_stack</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_tokenizer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>endIndex</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_attribname</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_attribvalue</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>_tagname</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.osmtogeojson.toGeojson">module osmtogeojson.toGeojson</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.osmtogeojson.toGeojson.toGeojson">
+            function <span class="apidocSignatureSpan">osmtogeojson.</span>toGeojson
+            <span class="apidocSignatureSpan">( data, options, featureCallback )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.osmtogeojson" id="apidoc.module.osmtogeojson">module osmtogeojson</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.osmtogeojson" id="apidoc.element.osmtogeojson.osmtogeojson">
+        function <span class="apidocSignatureSpan"></span>osmtogeojson
+        <span class="apidocSignatureSpan">(e, t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">osmtogeojson = function (e, t){function n(e){function t(e){var t=o.clone(e);t.lat=e.center.lat,t.lon=e.center.lon,t.__is_center_placeholder=!0,i
+.push(t)}function n(e){function t(e,t,r){var o={type:&#x22;node&#x22;,id:&#x22;_&#x22;+n.type+&#x22;/&#x22;+n.id+&#x22;bounds&#x22;+r,lat:e,lon:t};n.nodes.push(o.id),i.
+push(o)}var n=o.clone(e);n.nodes=[],t(n.bounds.minlat,n.bounds.minlon,1),t(n.bounds.maxlat,n.bounds.minlon,2),t(n.bounds.maxlat,
+n.bounds.maxlon,3),t(n.bounds.minlat,n.bounds.maxlon,4),n.nodes.push(n.nodes[0]),n.__is_bounds_placeholder=!0,u.push(n)}function
+ r(e){function t(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};i.push(r)}o.isArray(e.nodes)||(e.nodes=e.geometry.map(function(e){return
+ null!==e?&#x22;_anonymous@&#x22;+e.lat+&#x22;/&#x22;+e.lon:&#x22;_anonymous@unknown_location&#x22;})),e.geometry.forEach(function(n,r){n&#x26;&#x26;t(n.lat,n.lon,e.nodes
+[r])})}function a(e){function t(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};i.push(r)}function n(e,t){function n(e,t){var n={type
+:&#x22;node&#x22;,id:&#x22;_anonymous@&#x22;+e+&#x22;/&#x22;+t,lat:e,lon:t};r.nodes.push(n.id),i.push(n)}if(!u.some(function(e){return&#x22;way&#x22;==e.type&#x26;&#x26;e.id==t})){
+var r={type:&#x22;way&#x22;,id:t,nodes:[]};e.forEach(function(e){e?n(e.lat,e.lon):r.nodes.push(void 0)}),u.push(r)}}e.members.forEach(function
+(e,r){&#x22;node&#x22;==e.type?e.lat&#x26;&#x26;t(e.lat,e.lon,e.ref):&#x22;way&#x22;==e.type&#x26;&#x26;e.geometry&#x26;&#x26;(e.ref=&#x22;_fullGeom&#x22;+e.ref,n(e.geometry,e.ref))})}for(
+var i=new Array,u=new Array,l=new Array,c=0;c&#x3c;e.elements.length;c++)switch(e.elements[c].type){case&#x22;node&#x22;:var f=e.elements[c];i.
+push(f);break;case&#x22;way&#x22;:var p=o.clone(e.elements[c]);p.nodes=o.clone(p.nodes),u.push(p),p.center&#x26;&#x26;t(p),p.geometry?r(p):p.bounds&#x26;&#x26;
+n(p);break;case&#x22;relation&#x22;:var y=o.clone(e.elements[c]);y.members=o.clone(y.members),l.push(y);var d=y.members&#x26;&#x26;y.members.some(function
+(e){return&#x22;node&#x22;==e.type&#x26;&#x26;e.lat||&#x22;way&#x22;==e.type&#x26;&#x26;e.geometry&#x26;&#x26;e.geometry.length&#x3e;0});y.center&#x26;&#x26;t(y),d?a(y):y.bounds&#x26;&#x26;n(y)}return s(
+i,u,l)}function u(e){function t(e,t,n){e.hasAttribute(n)&#x26;&#x26;(t[n]=e.getAttribute(n))}function n(e,n){var r=o.clone(e);t(n,r,&#x22;lat&#x22;),
+t(n,r,&#x22;lon&#x22;),r.__is_center_placeholder=!0,u.push(r)}function r(e,t){function n(e,t,n){var o={type:&#x22;node&#x22;,id:&#x22;_&#x22;+r.type+&#x22;/&#x22;+r.id+&#x22;
+bounds&#x22;+n,lat:e,lon:t};r.nodes.push(o.id),u.push(o)}var r=o.clone(e);r.nodes=[],n(t.getAttribute(&#x22;minlat&#x22;),t.getAttribute(&#x22;minlon
+&#x22;),1),n(t.getAttribute(&#x22;maxlat&#x22;),t.getAttribute(&#x22;minlon&#x22;),2),n(t.getAttribute(&#x22;maxlat&#x22;),t.getAttribute(&#x22;maxlon&#x22;),3),n(t.getAttribute
+(&#x22;minlat&#x22;),t.getAttribute(&#x22;maxlon&#x22;),4),r.nodes.push(r.nodes[0]),r.__is_bounds_placeholder=!0,l.push(r)}function a(e,t){function
+n(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};return u.push(r),r.id}o.isArray(e.nodes)||(e.nodes=[],o.each(t,function(t,n){e.nodes
+.push(&#x22;_anonymous@&#x22;+t.getAttribute(&#x22;lat&#x22;)+&#x22;/&#x22;+t.getAttribute(&#x22;lon&#x22;))})),o.each(t,function(t,r){t.getAttribute(&#x22;lat&#x22;)&#x26;&#x26;n(t.getAttribute
+(&#x22;lat&#x22;),t.getAttribute(&#x22;lon&#x22;),e.nodes[r])})}function i(e,t){function n(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};u.push(r)}function
+ r(e,t){function n(e,t){var n={type:&#x22;node&#x22;,id:&#x22;_anonymous@&#x22;+e+&#x22;/&#x22;+t,lat:e,lon:t};r.nodes.push(n.id),u.push(n)}if(!l.some(function
+(e){return&#x22;way&#x22;==e.type&#x26;&#x26;e.id==t})){var r={type:&#x22;way&#x22;,id:t,nodes:[]};o.each(e,function(e){e.getAttribute(&#x22;lat&#x22;)?n(e.getAttribute
+(&#x22;lat&#x22;),e.getAttribute(&#x22;lon&#x22;)):r.nodes.push(void 0)}),l.push(r)}}o.each(t,function(t,o){&#x22;node&#x22;==e.members[o].type?t.getAttribute
+(&#x22;lat&#x22;)&#x26;&#x26;n(t.getAttribute(&#x22;lat&#x22;),t.getAttribute(&#x22;lon&#x22;),e.members[o].ref):&#x22;way&#x22;==e.members[o].type&#x26;&#x26;t.getElementsByTagName(&#x22;nd&#x22;).
+length&#x3e;0&#x26;&#x26;(e.members[o].ref=&#x22;_fullGeom&#x22;+e.members[o].ref,r(t.getElementsByTagName(&#x22;nd&#x22;),e.members[o].ref))})}var u=new Array,l=new
+ Array,c=new Array;o.each(e.getElementsByTagName(&#x22;node&#x22;),function(e,n){var r={};o.each(e.getElementsByTagName(&#x22;tag&#x22;),function(e){
+r[e.getAttribute(&#x22;k&#x22;)]=e.getAttribute(&#x22;v&#x22;)});var a={type:&#x22;node&#x22;};t(e,a,&#x22;id&#x22;),t(e,a,&#x22;lat&#x22;),t(e,a,&#x22;lon&#x22;),t(e,a,&#x22;version&#x22;),t(e,a,&#x22;timestamp
+&#x22;),t(e,a,&#x22;changeset&#x22;),t(e,a,&#x22;uid&#x22;),t(e,a,&#x22;user&#x22;),o.isEmpty(r)||(a.tags=r),u.push(a)});var f,p;return o.each(e.getElementsByTagName
+(&#x22;way&#x22;),function(e,i){var u={},s=[];o.each(e.getElementsByTagName(&#x22;tag&#x22;),function(e){u[e.getAttribute(&#x22;k&#x22;)]=e.getAttribute(&#x22;v&#x22;)});
+var c=!1;o.each(e.getElementsByTagName(&#x22; ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom" id="apidoc.element.osmtogeojson.lodash_custom">
+        function <span class="apidocSignatureSpan">osmtogeojson.</span>lodash_custom
+        <span class="apidocSignatureSpan">{{signature}}</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.toGeojson" id="apidoc.element.osmtogeojson.toGeojson">
+        function <span class="apidocSignatureSpan">osmtogeojson.</span>toGeojson
+        <span class="apidocSignatureSpan">( data, options, featureCallback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toGeojson = function ( data, options, featureCallback ) {
+
+  options = _.merge(
+    {
+      verbose: false,
+      flatProperties: true,
+      uninterestingTags: {
+        &#x22;source&#x22;: true,
+        &#x22;source_ref&#x22;: true,
+        &#x22;source:ref&#x22;: true,
+        &#x22;history&#x22;: true,
+        &#x22;attribution&#x22;: true,
+        &#x22;created_by&#x22;: true,
+        &#x22;tiger:county&#x22;: true,
+        &#x22;tiger:tlid&#x22;: true,
+        &#x22;tiger:upload_uuid&#x22;: true
+      },
+      polygonFeatures: polygonFeatures,
+      deduplicator: default_deduplicator
+    },
+    options
+  );
+
+  var result;
+  if ( ((typeof XMLDocument !== &#x22;undefined&#x22;) &#x26;&#x26; data instanceof XMLDocument ||
+        (typeof XMLDocument === &#x22;undefined&#x22;) &#x26;&#x26; data.childNodes) )
+    result = _osmXML2geoJSON(data);
+  else
+    result = _overpassJSON2geoJSON(data);
+  return result;
+
+  function _overpassJSON2geoJSON(json) {
+    // sort elements
+    var nodes = new Array();
+    var ways  = new Array();
+    var rels  = new Array();
+    // helper functions
+    function centerGeometry(object) {
+      var pseudoNode = _.clone(object);
+      pseudoNode.lat = object.center.lat;
+      pseudoNode.lon = object.center.lon;
+      pseudoNode.__is_center_placeholder = true;
+      nodes.push(pseudoNode);
+    }
+    function boundsGeometry(object) {
+      var pseudoWay = _.clone(object);
+      pseudoWay.nodes = [];
+      function addPseudoNode(lat,lon,i) {
+        var pseudoNode = {
+          type:&#x22;node&#x22;,
+          id:  &#x22;_&#x22;+pseudoWay.type+&#x22;/&#x22;+pseudoWay.id+&#x22;bounds&#x22;+i,
+          lat: lat,
+          lon: lon
+        }
+        pseudoWay.nodes.push(pseudoNode.id);
+        nodes.push(pseudoNode);
+      }
+      addPseudoNode(pseudoWay.bounds.minlat,pseudoWay.bounds.minlon,1);
+      addPseudoNode(pseudoWay.bounds.maxlat,pseudoWay.bounds.minlon,2);
+      addPseudoNode(pseudoWay.bounds.maxlat,pseudoWay.bounds.maxlon,3);
+      addPseudoNode(pseudoWay.bounds.minlat,pseudoWay.bounds.maxlon,4);
+      pseudoWay.nodes.push(pseudoWay.nodes[0]);
+      pseudoWay.__is_bounds_placeholder = true;
+      ways.push(pseudoWay);
+    }
+    function fullGeometryWay(way) {
+      function addFullGeometryNode(lat,lon,id) {
+        var geometryNode = {
+          type:&#x22;node&#x22;,
+          id:  id,
+          lat: lat,
+          lon: lon
+        }
+        nodes.push(geometryNode);
+      }
+      if (!_.isArray(way.nodes)) {
+        way.nodes = way.geometry.map(function(nd) {
+          if (nd !== null) // have to skip ref-less nodes
+            return &#x22;_anonymous@&#x22;+nd.lat+&#x22;/&#x22;+nd.lon;
+          else
+            return &#x22;_anonymous@unknown_location&#x22;;
+        });
+      }
+      way.geometry.forEach(function(nd, i) {
+        if (nd) {
+          addFullGeometryNode(
+            nd.lat,
+            nd.lon,
+            way.nodes[i]
+          );
+        }
+      });
+    }
+    function fullGeometryRelation(rel) {
+      function addFullGeometryNode(lat,lon,id) {
+        var geometryNode = {
+          type:&#x22;node&#x22;,
+          id:  id,
+          lat: lat,
+          lon: lon
+        }
+        nodes.push(geometryNode);
+      }
+      function addFullGeometryWay(geometry,id) {
+        // shared multipolygon ways cannot be defined multiple times with the same id.
+        if (ways.some(function (way) { // todo: this is slow :(
+          return way.type == &#x22;way&#x22; &#x26;&#x26; way.id == id;
+        })) return;
+        var geometryWay = {
+          type: &#x22;way&#x22;,
+          id:   id,
+          nodes:[]
+        }
+        function addFullGeometryWayPseudoNode(lat,lon) {
+          // todo? do not save the same pseudo node multiple times
+          var geometryPseudoNode = {
+            type:&#x22;node&#x22;,
+            id:  &#x22;_anonymous@&#x22;+lat+&#x22;/&#x22;+lon,
+            lat: lat,
+            lon: lon
+          }
+          geometryWay.nodes.push(geometryPseudoNode.id);
+          nodes.push(geometryPseudoNode);
+        }
+        geometry.forEach(function(nd) {
+          if (nd) {
+            addFullGeometryWayPseudoNode(
+              nd.lat,
+              nd.lon
+            );
+          } else {
+            geometryWay.nodes.push(undefined);
+          }
+        });
+        ways.push(geometryWay);
+      }
+      rel.members.forEach(function(member, i) ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.osmtogeojson.lodash_custom" id="apidoc.module.osmtogeojson.lodash_custom">module osmtogeojson.lodash_custom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.lodash_custom" id="apidoc.element.osmtogeojson.lodash_custom.lodash_custom">
+        function <span class="apidocSignatureSpan">osmtogeojson.</span>lodash_custom
+        <span class="apidocSignatureSpan">{{signature}}</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom._" id="apidoc.element.osmtogeojson.lodash_custom._">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>_
+        <span class="apidocSignatureSpan">{{signature}}</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.clone" id="apidoc.element.osmtogeojson.lodash_custom.clone">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>clone
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clone(value) {
+  return baseClone(value, false, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  function _overpassJSON2geoJSON(json) {
+// sort elements
+var nodes = new Array();
+var ways  = new Array();
+var rels  = new Array();
+// helper functions
+function centerGeometry(object) {
+  var pseudoNode = _.<span class="apidocCodeKeywordSpan">clone</span>(object);
+  pseudoNode.lat = object.center.lat;
+  pseudoNode.lon = object.center.lon;
+  pseudoNode.__is_center_placeholder = true;
+  nodes.push(pseudoNode);
+}
+function boundsGeometry(object) {
+  var pseudoWay = _.clone(object);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.compact" id="apidoc.element.osmtogeojson.lodash_custom.compact">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>compact
+        <span class="apidocSignatureSpan">(array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compact(array) {
+  var index = -1,
+      length = array ? array.length : 0,
+      resIndex = 0,
+      result = [];
+
+  while (++index &#x3c; length) {
+    var value = array[index];
+    if (value) {
+      result[resIndex++] = value;
+    }
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return true;
+      is_tainted = true;
+      if (options.verbose) console.warn(&#x27;Route&#x27;, rel.type+&#x27;/&#x27;+rel.id,  &#x27;tainted by a way&#x27;, m.type+&#
+x27;/&#x27;+m.ref, &#x27;with a missing node&#x27;);
+      return false;
+    })
+  };
+});
+members = _.<span class="apidocCodeKeywordSpan">compact</span>(members);
+// construct connected linestrings
+var linestrings;
+linestrings = join(members);
+
+// sanitize mp-coordinates (remove empty clusters or rings, {lat,lon,...} to [lon,lat]
+var coords = [];
+coords = _.compact(linestrings.map(function(linestring) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.each" id="apidoc.element.osmtogeojson.lodash_custom.each">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>each
+        <span class="apidocSignatureSpan">(collection, iteratee)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function forEach(collection, iteratee) {
+  var func = isArray(collection) ? arrayEach : baseEach;
+  return func(collection, getIteratee(iteratee, 3));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    lon: lon
+  }
+  nodes.push(geometryNode);
+  return geometryNode.id;
+}
+if (!_.isArray(way.nodes)) {
+  way.nodes = [];
+  _.<span class="apidocCodeKeywordSpan">each</span>( nds, function( nd, i ) {
+    way.nodes.push(&#x22;_anonymous@&#x22;+nd.getAttribute(&#x27;lat&#x27;)+&#x22;/&#x22;+nd.getAttribute(&#x27;lon&#x27;));
+  });
+}
+_.each( nds, function( nd, i ) {
+  if (nd.getAttribute(&#x27;lat&#x27;)) {
+    addFullGeometryNode(
+      nd.getAttribute(&#x27;lat&#x27;),
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.eq" id="apidoc.element.osmtogeojson.lodash_custom.eq">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>eq
+        <span class="apidocSignatureSpan">(value, other)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function eq(value, other) {
+  return value === other || (value !== value &#x26;&#x26; other !== other);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {*} other The other value to compare.
+* @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+* @example
+*
+* var object = { &#x27;a&#x27;: 1 };
+* var other = { &#x27;a&#x27;: 1 };
+*
+* _.<span class="apidocCodeKeywordSpan">eq</span>(object, object);
+* // =&#x3e; true
+*
+* _.eq(object, other);
+* // =&#x3e; false
+*
+* _.eq(&#x27;a&#x27;, &#x27;a&#x27;);
+* // =&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.forEach" id="apidoc.element.osmtogeojson.lodash_custom.forEach">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>forEach
+        <span class="apidocSignatureSpan">(collection, iteratee)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function forEach(collection, iteratee) {
+  var func = isArray(collection) ? arrayEach : baseEach;
+  return func(collection, getIteratee(iteratee, 3));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+var _ = require(&#x22;./lodash.custom.js&#x22;);
+var rewind = require(&#x22;geojson-rewind&#x22;);
+
+// see https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features
+var polygonFeatures = {};
+require(&#x22;osm-polygon-features&#x22;).<span class="apidocCodeKeywordSpan">forEach</span>(function(tags) {
+if (tags.polygon === &#x22;all&#x22;)
+  polygonFeatures[tags.key] = true;
+else {
+  var list = (tags.polygon === &#x22;whitelist&#x22;) ? &#x22;included_values&#x22; : &#x22;excluded_values&#x22;,
+      tagValuesObj = {};
+  tags.values.forEach(function(value) { tagValuesObj[value] = true; });
+  polygonFeatures[tags.key] = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.get" id="apidoc.element.osmtogeojson.lodash_custom.get">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>get
+        <span class="apidocSignatureSpan">(object, path, defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get(object, path, defaultValue) {
+  var result = object == null ? undefined : baseGet(object, path);
+  return result === undefined ? defaultValue : result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @private
+ * @name get
+ * @memberOf MapCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function mapCacheGet(key) {
+  return getMapData(this, key).<span class="apidocCodeKeywordSpan">get</span>(key);
+}
+
+/**
+ * Checks if a map value for `key` exists.
+ *
+ * @private
+ * @name has
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.hasIn" id="apidoc.element.osmtogeojson.lodash_custom.hasIn">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>hasIn
+        <span class="apidocSignatureSpan">(object, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hasIn(object, path) {
+  return object != null &#x26;&#x26; hasPath(object, path, baseHasIn);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {Object} object The object to query.
+* @param {Array|string} path The path to check.
+* @returns {boolean} Returns `true` if `path` exists, else `false`.
+* @example
+*
+* var object = _.create({ &#x27;a&#x27;: _.create({ &#x27;b&#x27;: 2 }) });
+*
+* _.<span class="apidocCodeKeywordSpan">hasIn</span>(object, &#x27;a&#x27;);
+* // =&#x3e; true
+*
+* _.hasIn(object, &#x27;a.b&#x27;);
+* // =&#x3e; true
+*
+* _.hasIn(object, [&#x27;a&#x27;, &#x27;b&#x27;]);
+* // =&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.identity" id="apidoc.element.osmtogeojson.lodash_custom.identity">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>identity
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function identity(value) {
+  return value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @category Util
+ * @param {*} value Any value.
+ * @returns {*} Returns `value`.
+ * @example
+ *
+ * var object = { &#x27;a&#x27;: 1 };
+ *
+ * console.log(_.<span class="apidocCodeKeywordSpan">identity</span>(object) === object);
+ * // =&#x3e; true
+ */
+function identity(value) {
+  return value;
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isArguments" id="apidoc.element.osmtogeojson.lodash_custom.isArguments">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isArguments
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArguments(value) {
+  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+  return isArrayLikeObject(value) &#x26;&#x26; hasOwnProperty.call(value, &#x27;callee&#x27;) &#x26;&#x26;
+    (!propertyIsEnumerable.call(value, &#x27;callee&#x27;) || objectToString.call(value) == argsTag);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ *  else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isArguments</span>(function() { return arguments; }());
+ * // =&#x3e; true
+ *
+ * _.isArguments([1, 2, 3]);
+ * // =&#x3e; false
+ */
+function isArguments(value) {
+  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isArray" id="apidoc.element.osmtogeojson.lodash_custom.isArray">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArray() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    type:&#x22;node&#x22;,
+    id:  id,
+    lat: lat,
+    lon: lon
+  }
+  nodes.push(geometryNode);
+}
+if (!_.<span class="apidocCodeKeywordSpan">isArray</span>(way.nodes)) {
+  way.nodes = way.geometry.map(function(nd) {
+    if (nd !== null) // have to skip ref-less nodes
+      return &#x22;_anonymous@&#x22;+nd.lat+&#x22;/&#x22;+nd.lon;
+    else
+      return &#x22;_anonymous@unknown_location&#x22;;
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isArrayLike" id="apidoc.element.osmtogeojson.lodash_custom.isArrayLike">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isArrayLike
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArrayLike(value) {
+  return value != null &#x26;&#x26; isLength(value.length) &#x26;&#x26; !isFunction(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to check.
+* @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">isArrayLike</span>([1, 2, 3]);
+* // =&#x3e; true
+*
+* _.isArrayLike(document.body.children);
+* // =&#x3e; true
+*
+* _.isArrayLike(&#x27;abc&#x27;);
+* // =&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isArrayLikeObject" id="apidoc.element.osmtogeojson.lodash_custom.isArrayLikeObject">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isArrayLikeObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArrayLikeObject(value) {
+  return isObjectLike(value) &#x26;&#x26; isArrayLike(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to check.
+* @returns {boolean} Returns `true` if `value` is an array-like object,
+*  else `false`.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">isArrayLikeObject</span>([1, 2, 3]);
+* // =&#x3e; true
+*
+* _.isArrayLikeObject(document.body.children);
+* // =&#x3e; true
+*
+* _.isArrayLikeObject(&#x27;abc&#x27;);
+* // =&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isBuffer" id="apidoc.element.osmtogeojson.lodash_custom.isBuffer">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isBuffer
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isBuffer(b) {
+  return b instanceof Buffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isBuffer</span>(new Buffer(2));
+ * // =&#x3e; true
+ *
+ * _.isBuffer(new Uint8Array(2));
+ * // =&#x3e; false
+ */
+var isBuffer = nativeIsBuffer || stubFalse;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isEmpty" id="apidoc.element.osmtogeojson.lodash_custom.isEmpty">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isEmpty
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isEmpty(value) {
+  if (isArrayLike(value) &#x26;&#x26;
+      (isArray(value) || typeof value == &#x27;string&#x27; ||
+        typeof value.splice == &#x27;function&#x27; || isBuffer(value) || isArguments(value))) {
+    return !value.length;
+  }
+  var tag = getTag(value);
+  if (tag == mapTag || tag == setTag) {
+    return !value.size;
+  }
+  if (nonEnumShadows || isPrototype(value)) {
+    return !nativeKeys(value).length;
+  }
+  for (var key in value) {
+    if (hasOwnProperty.call(value, key)) {
+      return false;
+    }
+  }
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  copy_attribute( node, nodeObject, &#x27;lat&#x27; );
+  copy_attribute( node, nodeObject, &#x27;lon&#x27; );
+  copy_attribute( node, nodeObject, &#x27;version&#x27; );
+  copy_attribute( node, nodeObject, &#x27;timestamp&#x27; );
+  copy_attribute( node, nodeObject, &#x27;changeset&#x27; );
+  copy_attribute( node, nodeObject, &#x27;uid&#x27; );
+  copy_attribute( node, nodeObject, &#x27;user&#x27; );
+  if (!_.<span class="apidocCodeKeywordSpan">isEmpty</span>(tags))
+    nodeObject.tags = tags;
+  nodes.push(nodeObject);
+});
+// ways
+var centroid,bounds;
+_.each( xml.getElementsByTagName(&#x27;way&#x27;), function( way, i ) {
+  var tags = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isFunction" id="apidoc.element.osmtogeojson.lodash_custom.isFunction">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isFunction
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 8-9 which returns &#x27;object&#x27; for typed array and other constructors.
+  var tag = isObject(value) ? objectToString.call(value) : &#x27;&#x27;;
+  return tag == funcTag || tag == genTag;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isFunction</span>(_);
+ * // =&#x3e; true
+ *
+ * _.isFunction(/abc/);
+ * // =&#x3e; false
+ */
+function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isLength" id="apidoc.element.osmtogeojson.lodash_custom.isLength">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isLength
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isLength(value) {
+  return typeof value == &#x27;number&#x27; &#x26;&#x26;
+    value &#x3e; -1 &#x26;&#x26; value % 1 == 0 &#x26;&#x26; value &#x3c;= MAX_SAFE_INTEGER;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to check.
+* @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">isLength</span>(3);
+* // =&#x3e; true
+*
+* _.isLength(Number.MIN_VALUE);
+* // =&#x3e; false
+*
+* _.isLength(Infinity);
+* // =&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isObject" id="apidoc.element.osmtogeojson.lodash_custom.isObject">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isObject(value) {
+  var type = typeof value;
+  return !!value &#x26;&#x26; (type == &#x27;object&#x27; || type == &#x27;function&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 0.1.0
+* @category Lang
+* @param {*} value The value to check.
+* @returns {boolean} Returns `true` if `value` is an object, else `false`.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">isObject</span>({});
+* // =&#x3e; true
+*
+* _.isObject([1, 2, 3]);
+* // =&#x3e; true
+*
+* _.isObject(_.noop);
+* // =&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isObjectLike" id="apidoc.element.osmtogeojson.lodash_custom.isObjectLike">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isObjectLike
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isObjectLike(value) {
+  return !!value &#x26;&#x26; typeof value == &#x27;object&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to check.
+* @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">isObjectLike</span>({});
+* // =&#x3e; true
+*
+* _.isObjectLike([1, 2, 3]);
+* // =&#x3e; true
+*
+* _.isObjectLike(_.noop);
+* // =&#x3e; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isPlainObject" id="apidoc.element.osmtogeojson.lodash_custom.isPlainObject">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isPlainObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isPlainObject(value) {
+  if (!isObjectLike(value) ||
+      objectToString.call(value) != objectTag || isHostObject(value)) {
+    return false;
+  }
+  var proto = getPrototype(value);
+  if (proto === null) {
+    return true;
+  }
+  var Ctor = hasOwnProperty.call(proto, &#x27;constructor&#x27;) &#x26;&#x26; proto.constructor;
+  return (typeof Ctor == &#x27;function&#x27; &#x26;&#x26;
+    Ctor instanceof Ctor &#x26;&#x26; funcToString.call(Ctor) == objectCtorString);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
+* @example
+*
+* function Foo() {
+*   this.a = 1;
+* }
+*
+* _.<span class="apidocCodeKeywordSpan">isPlainObject</span>(new Foo);
+* // =&#x3e; false
+*
+* _.isPlainObject([1, 2, 3]);
+* // =&#x3e; false
+*
+* _.isPlainObject({ &#x27;x&#x27;: 0, &#x27;y&#x27;: 0 });
+* // =&#x3e; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isSymbol" id="apidoc.element.osmtogeojson.lodash_custom.isSymbol">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isSymbol
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSymbol(value) {
+  return typeof value == &#x27;symbol&#x27; ||
+    (isObjectLike(value) &#x26;&#x26; objectToString.call(value) == symbolTag);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isSymbol</span>(Symbol.iterator);
+ * // =&#x3e; true
+ *
+ * _.isSymbol(&#x27;abc&#x27;);
+ * // =&#x3e; false
+ */
+function isSymbol(value) {
+  return typeof value == &#x27;symbol&#x27; ||
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.isTypedArray" id="apidoc.element.osmtogeojson.lodash_custom.isTypedArray">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>isTypedArray
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isTypedArray = function (value) {
+  return func(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @memberOf _
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isTypedArray</span>(new Uint8Array);
+ * // =&#x3e; true
+ *
+ * _.isTypedArray([]);
+ * // =&#x3e; false
+ */
+var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.iteratee" id="apidoc.element.osmtogeojson.lodash_custom.iteratee">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>iteratee
+        <span class="apidocSignatureSpan">(func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function iteratee(func) {
+  return baseIteratee(typeof func == &#x27;function&#x27; ? func : baseClone(func, true));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* var users = [
+*   { &#x27;user&#x27;: &#x27;barney&#x27;, &#x27;age&#x27;: 36, &#x27;active&#x27;: true },
+*   { &#x27;user&#x27;: &#x27;fred&#x27;,   &#x27;age&#x27;: 40, &#x27;active&#x27;: false }
+* ];
+*
+* // The `_.matches` iteratee shorthand.
+* _.filter(users, _.<span class="apidocCodeKeywordSpan">iteratee</span>({ &#x27;user&#x27;: &#x27;barney&#x27;, &#x27;active&#x27
+;: true }));
+* // =&#x3e; [{ &#x27;user&#x27;: &#x27;barney&#x27;, &#x27;age&#x27;: 36, &#x27;active&#x27;: true }]
+*
+* // The `_.matchesProperty` iteratee shorthand.
+* _.filter(users, _.iteratee([&#x27;user&#x27;, &#x27;fred&#x27;]));
+* // =&#x3e; [{ &#x27;user&#x27;: &#x27;fred&#x27;, &#x27;age&#x27;: 40 }]
+*
+* // The `_.property` iteratee shorthand.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.keys" id="apidoc.element.osmtogeojson.lodash_custom.keys">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>keys
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function keys(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.<span class="apidocCodeKeywordSpan">keys</span>(new Foo);
+ * // =&#x3e; [&#x27;a&#x27;, &#x27;b&#x27;] (iteration order is not guaranteed)
+ *
+ * _.keys(&#x27;hi&#x27;);
+ * // =&#x3e; [&#x27;0&#x27;, &#x27;1&#x27;]
+ */
+function keys(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.keysIn" id="apidoc.element.osmtogeojson.lodash_custom.keysIn">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>keysIn
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function keysIn(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object, true) : baseKeysIn(object);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.<span class="apidocCodeKeywordSpan">keysIn</span>(new Foo);
+ * // =&#x3e; [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;] (iteration order is not guaranteed)
+ */
+function keysIn(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object, true) : baseKeysIn(object);
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.memoize" id="apidoc.element.osmtogeojson.lodash_custom.memoize">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>memoize
+        <span class="apidocSignatureSpan">(func, resolver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function memoize(func, resolver) {
+  if (typeof func != &#x27;function&#x27; || (resolver &#x26;&#x26; typeof resolver != &#x27;function&#x27;)) {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  var memoized = function() {
+    var args = arguments,
+        key = resolver ? resolver.apply(this, args) : args[0],
+        cache = memoized.cache;
+
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    var result = func.apply(this, args);
+    memoized.cache = cache.set(key, result);
+    return result;
+  };
+  memoized.cache = new (memoize.Cache || MapCache);
+  return memoized;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {Function} [resolver] The function to resolve the cache key.
+* @returns {Function} Returns the new memoized function.
+* @example
+*
+* var object = { &#x27;a&#x27;: 1, &#x27;b&#x27;: 2 };
+* var other = { &#x27;c&#x27;: 3, &#x27;d&#x27;: 4 };
+*
+* var values = _.<span class="apidocCodeKeywordSpan">memoize</span>(_.values);
+* values(object);
+* // =&#x3e; [1, 2]
+*
+* values(other);
+* // =&#x3e; [3, 4]
+*
+* object.a = 2;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.merge" id="apidoc.element.osmtogeojson.lodash_custom.merge">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>merge
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function () {
+  var args = arguments,
+      index = -1,
+      length = nativeMax(args.length - start, 0),
+      array = Array(length);
+
+  while (++index &#x3c; length) {
+    array[index] = args[start + index];
+  }
+  index = -1;
+  var otherArgs = Array(start + 1);
+  while (++index &#x3c; start) {
+    otherArgs[index] = args[index];
+  }
+  otherArgs[start] = array;
+  return apply(func, this, otherArgs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if ((objectA.version || objectB.version) &#x26;&#x26;
+    (objectA.version !== objectB.version)) {
+  return (objectA.version || 0) &#x3e; (objectB.version || 0)
+    ? objectA
+    : objectB;
+}
+// otherwise: return merged obj properties
+return _.<span class="apidocCodeKeywordSpan">merge</span>(objectA, objectB);
+}
+
+var osmtogeojson = {};
+
+osmtogeojson = function( data, options, featureCallback ) {
+
+options = _.merge(
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.property" id="apidoc.element.osmtogeojson.lodash_custom.property">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>property
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function property(path) {
+  return isKey(path) ? baseProperty(toKey(path)) : basePropertyDeep(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @example
+ *
+ * var objects = [
+ *   { &#x27;a&#x27;: { &#x27;b&#x27;: 2 } },
+ *   { &#x27;a&#x27;: { &#x27;b&#x27;: 1 } }
+ * ];
+ *
+ * _.map(objects, _.<span class="apidocCodeKeywordSpan">property</span>(&#x27;a.b&#x27;));
+ * // =&#x3e; [2, 1]
+ *
+ * _.map(_.sortBy(objects, _.property([&#x27;a&#x27;, &#x27;b&#x27;])), &#x27;a.b&#x27;);
+ * // =&#x3e; [1, 2]
+ */
+function property(path) {
+  return isKey(path) ? baseProperty(toKey(path)) : basePropertyDeep(path);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.stubArray" id="apidoc.element.osmtogeojson.lodash_custom.stubArray">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>stubArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stubArray() {
+  return [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.stubFalse" id="apidoc.element.osmtogeojson.lodash_custom.stubFalse">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>stubFalse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stubFalse() {
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.toPlainObject" id="apidoc.element.osmtogeojson.lodash_custom.toPlainObject">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>toPlainObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toPlainObject(value) {
+  return copyObject(value, keysIn(value));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.assign({ &#x27;a&#x27;: 1 }, new Foo);
+ * // =&#x3e; { &#x27;a&#x27;: 1, &#x27;b&#x27;: 2 }
+ *
+ * _.assign({ &#x27;a&#x27;: 1 }, _.<span class="apidocCodeKeywordSpan">toPlainObject</span>(new Foo));
+ * // =&#x3e; { &#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: 3 }
+ */
+function toPlainObject(value) {
+  return copyObject(value, keysIn(value));
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.lodash_custom.toString" id="apidoc.element.osmtogeojson.lodash_custom.toString">
+        function <span class="apidocSignatureSpan">osmtogeojson.lodash_custom.</span>toString
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString(value) {
+  return value == null ? &#x27;&#x27; : baseToString(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to process.
+* @returns {string} Returns the string.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">toString</span>(null);
+* // =&#x3e; &#x27;&#x27;
+*
+* _.toString(-0);
+* // =&#x3e; &#x27;-0&#x27;
+*
+* _.toString([1, 2, 3]);
+* // =&#x3e; &#x27;1,2,3&#x27;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.osmtogeojson.osmtogeojson" id="apidoc.module.osmtogeojson.osmtogeojson">module osmtogeojson.osmtogeojson</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.osmtogeojson.osmtogeojson" id="apidoc.element.osmtogeojson.osmtogeojson.osmtogeojson">
+        function <span class="apidocSignatureSpan">osmtogeojson.</span>osmtogeojson
+        <span class="apidocSignatureSpan">(e, t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">osmtogeojson = function (e, t){function n(e){function t(e){var t=o.clone(e);t.lat=e.center.lat,t.lon=e.center.lon,t.__is_center_placeholder=!0,i
+.push(t)}function n(e){function t(e,t,r){var o={type:&#x22;node&#x22;,id:&#x22;_&#x22;+n.type+&#x22;/&#x22;+n.id+&#x22;bounds&#x22;+r,lat:e,lon:t};n.nodes.push(o.id),i.
+push(o)}var n=o.clone(e);n.nodes=[],t(n.bounds.minlat,n.bounds.minlon,1),t(n.bounds.maxlat,n.bounds.minlon,2),t(n.bounds.maxlat,
+n.bounds.maxlon,3),t(n.bounds.minlat,n.bounds.maxlon,4),n.nodes.push(n.nodes[0]),n.__is_bounds_placeholder=!0,u.push(n)}function
+ r(e){function t(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};i.push(r)}o.isArray(e.nodes)||(e.nodes=e.geometry.map(function(e){return
+ null!==e?&#x22;_anonymous@&#x22;+e.lat+&#x22;/&#x22;+e.lon:&#x22;_anonymous@unknown_location&#x22;})),e.geometry.forEach(function(n,r){n&#x26;&#x26;t(n.lat,n.lon,e.nodes
+[r])})}function a(e){function t(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};i.push(r)}function n(e,t){function n(e,t){var n={type
+:&#x22;node&#x22;,id:&#x22;_anonymous@&#x22;+e+&#x22;/&#x22;+t,lat:e,lon:t};r.nodes.push(n.id),i.push(n)}if(!u.some(function(e){return&#x22;way&#x22;==e.type&#x26;&#x26;e.id==t})){
+var r={type:&#x22;way&#x22;,id:t,nodes:[]};e.forEach(function(e){e?n(e.lat,e.lon):r.nodes.push(void 0)}),u.push(r)}}e.members.forEach(function
+(e,r){&#x22;node&#x22;==e.type?e.lat&#x26;&#x26;t(e.lat,e.lon,e.ref):&#x22;way&#x22;==e.type&#x26;&#x26;e.geometry&#x26;&#x26;(e.ref=&#x22;_fullGeom&#x22;+e.ref,n(e.geometry,e.ref))})}for(
+var i=new Array,u=new Array,l=new Array,c=0;c&#x3c;e.elements.length;c++)switch(e.elements[c].type){case&#x22;node&#x22;:var f=e.elements[c];i.
+push(f);break;case&#x22;way&#x22;:var p=o.clone(e.elements[c]);p.nodes=o.clone(p.nodes),u.push(p),p.center&#x26;&#x26;t(p),p.geometry?r(p):p.bounds&#x26;&#x26;
+n(p);break;case&#x22;relation&#x22;:var y=o.clone(e.elements[c]);y.members=o.clone(y.members),l.push(y);var d=y.members&#x26;&#x26;y.members.some(function
+(e){return&#x22;node&#x22;==e.type&#x26;&#x26;e.lat||&#x22;way&#x22;==e.type&#x26;&#x26;e.geometry&#x26;&#x26;e.geometry.length&#x3e;0});y.center&#x26;&#x26;t(y),d?a(y):y.bounds&#x26;&#x26;n(y)}return s(
+i,u,l)}function u(e){function t(e,t,n){e.hasAttribute(n)&#x26;&#x26;(t[n]=e.getAttribute(n))}function n(e,n){var r=o.clone(e);t(n,r,&#x22;lat&#x22;),
+t(n,r,&#x22;lon&#x22;),r.__is_center_placeholder=!0,u.push(r)}function r(e,t){function n(e,t,n){var o={type:&#x22;node&#x22;,id:&#x22;_&#x22;+r.type+&#x22;/&#x22;+r.id+&#x22;
+bounds&#x22;+n,lat:e,lon:t};r.nodes.push(o.id),u.push(o)}var r=o.clone(e);r.nodes=[],n(t.getAttribute(&#x22;minlat&#x22;),t.getAttribute(&#x22;minlon
+&#x22;),1),n(t.getAttribute(&#x22;maxlat&#x22;),t.getAttribute(&#x22;minlon&#x22;),2),n(t.getAttribute(&#x22;maxlat&#x22;),t.getAttribute(&#x22;maxlon&#x22;),3),n(t.getAttribute
+(&#x22;minlat&#x22;),t.getAttribute(&#x22;maxlon&#x22;),4),r.nodes.push(r.nodes[0]),r.__is_bounds_placeholder=!0,l.push(r)}function a(e,t){function
+n(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};return u.push(r),r.id}o.isArray(e.nodes)||(e.nodes=[],o.each(t,function(t,n){e.nodes
+.push(&#x22;_anonymous@&#x22;+t.getAttribute(&#x22;lat&#x22;)+&#x22;/&#x22;+t.getAttribute(&#x22;lon&#x22;))})),o.each(t,function(t,r){t.getAttribute(&#x22;lat&#x22;)&#x26;&#x26;n(t.getAttribute
+(&#x22;lat&#x22;),t.getAttribute(&#x22;lon&#x22;),e.nodes[r])})}function i(e,t){function n(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};u.push(r)}function
+ r(e,t){function n(e,t){var n={type:&#x22;node&#x22;,id:&#x22;_anonymous@&#x22;+e+&#x22;/&#x22;+t,lat:e,lon:t};r.nodes.push(n.id),u.push(n)}if(!l.some(function
+(e){return&#x22;way&#x22;==e.type&#x26;&#x26;e.id==t})){var r={type:&#x22;way&#x22;,id:t,nodes:[]};o.each(e,function(e){e.getAttribute(&#x22;lat&#x22;)?n(e.getAttribute
+(&#x22;lat&#x22;),e.getAttribute(&#x22;lon&#x22;)):r.nodes.push(void 0)}),l.push(r)}}o.each(t,function(t,o){&#x22;node&#x22;==e.members[o].type?t.getAttribute
+(&#x22;lat&#x22;)&#x26;&#x26;n(t.getAttribute(&#x22;lat&#x22;),t.getAttribute(&#x22;lon&#x22;),e.members[o].ref):&#x22;way&#x22;==e.members[o].type&#x26;&#x26;t.getElementsByTagName(&#x22;nd&#x22;).
+length&#x3e;0&#x26;&#x26;(e.members[o].ref=&#x22;_fullGeom&#x22;+e.members[o].ref,r(t.getElementsByTagName(&#x22;nd&#x22;),e.members[o].ref))})}var u=new Array,l=new
+ Array,c=new Array;o.each(e.getElementsByTagName(&#x22;node&#x22;),function(e,n){var r={};o.each(e.getElementsByTagName(&#x22;tag&#x22;),function(e){
+r[e.getAttribute(&#x22;k&#x22;)]=e.getAttribute(&#x22;v&#x22;)});var a={type:&#x22;node&#x22;};t(e,a,&#x22;id&#x22;),t(e,a,&#x22;lat&#x22;),t(e,a,&#x22;lon&#x22;),t(e,a,&#x22;version&#x22;),t(e,a,&#x22;timestamp
+&#x22;),t(e,a,&#x22;changeset&#x22;),t(e,a,&#x22;uid&#x22;),t(e,a,&#x22;user&#x22;),o.isEmpty(r)||(a.tags=r),u.push(a)});var f,p;return o.each(e.getElementsByTagName
+(&#x22;way&#x22;),function(e,i){var u={},s=[];o.each(e.getElementsByTagName(&#x22;tag&#x22;),function(e){u[e.getAttribute(&#x22;k&#x22;)]=e.getAttribute(&#x22;v&#x22;)});
+var c=!1;o.each(e.getElementsByTagName(&#x22; ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.osmtogeojson.toGeojson" id="apidoc.element.osmtogeojson.osmtogeojson.toGeojson">
+        function <span class="apidocSignatureSpan">osmtogeojson.osmtogeojson.</span>toGeojson
+        <span class="apidocSignatureSpan">(e, t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toGeojson = function (e, t){function n(e){function t(e){var t=o.clone(e);t.lat=e.center.lat,t.lon=e.center.lon,t.__is_center_placeholder=!0,i
+.push(t)}function n(e){function t(e,t,r){var o={type:&#x22;node&#x22;,id:&#x22;_&#x22;+n.type+&#x22;/&#x22;+n.id+&#x22;bounds&#x22;+r,lat:e,lon:t};n.nodes.push(o.id),i.
+push(o)}var n=o.clone(e);n.nodes=[],t(n.bounds.minlat,n.bounds.minlon,1),t(n.bounds.maxlat,n.bounds.minlon,2),t(n.bounds.maxlat,
+n.bounds.maxlon,3),t(n.bounds.minlat,n.bounds.maxlon,4),n.nodes.push(n.nodes[0]),n.__is_bounds_placeholder=!0,u.push(n)}function
+ r(e){function t(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};i.push(r)}o.isArray(e.nodes)||(e.nodes=e.geometry.map(function(e){return
+ null!==e?&#x22;_anonymous@&#x22;+e.lat+&#x22;/&#x22;+e.lon:&#x22;_anonymous@unknown_location&#x22;})),e.geometry.forEach(function(n,r){n&#x26;&#x26;t(n.lat,n.lon,e.nodes
+[r])})}function a(e){function t(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};i.push(r)}function n(e,t){function n(e,t){var n={type
+:&#x22;node&#x22;,id:&#x22;_anonymous@&#x22;+e+&#x22;/&#x22;+t,lat:e,lon:t};r.nodes.push(n.id),i.push(n)}if(!u.some(function(e){return&#x22;way&#x22;==e.type&#x26;&#x26;e.id==t})){
+var r={type:&#x22;way&#x22;,id:t,nodes:[]};e.forEach(function(e){e?n(e.lat,e.lon):r.nodes.push(void 0)}),u.push(r)}}e.members.forEach(function
+(e,r){&#x22;node&#x22;==e.type?e.lat&#x26;&#x26;t(e.lat,e.lon,e.ref):&#x22;way&#x22;==e.type&#x26;&#x26;e.geometry&#x26;&#x26;(e.ref=&#x22;_fullGeom&#x22;+e.ref,n(e.geometry,e.ref))})}for(
+var i=new Array,u=new Array,l=new Array,c=0;c&#x3c;e.elements.length;c++)switch(e.elements[c].type){case&#x22;node&#x22;:var f=e.elements[c];i.
+push(f);break;case&#x22;way&#x22;:var p=o.clone(e.elements[c]);p.nodes=o.clone(p.nodes),u.push(p),p.center&#x26;&#x26;t(p),p.geometry?r(p):p.bounds&#x26;&#x26;
+n(p);break;case&#x22;relation&#x22;:var y=o.clone(e.elements[c]);y.members=o.clone(y.members),l.push(y);var d=y.members&#x26;&#x26;y.members.some(function
+(e){return&#x22;node&#x22;==e.type&#x26;&#x26;e.lat||&#x22;way&#x22;==e.type&#x26;&#x26;e.geometry&#x26;&#x26;e.geometry.length&#x3e;0});y.center&#x26;&#x26;t(y),d?a(y):y.bounds&#x26;&#x26;n(y)}return s(
+i,u,l)}function u(e){function t(e,t,n){e.hasAttribute(n)&#x26;&#x26;(t[n]=e.getAttribute(n))}function n(e,n){var r=o.clone(e);t(n,r,&#x22;lat&#x22;),
+t(n,r,&#x22;lon&#x22;),r.__is_center_placeholder=!0,u.push(r)}function r(e,t){function n(e,t,n){var o={type:&#x22;node&#x22;,id:&#x22;_&#x22;+r.type+&#x22;/&#x22;+r.id+&#x22;
+bounds&#x22;+n,lat:e,lon:t};r.nodes.push(o.id),u.push(o)}var r=o.clone(e);r.nodes=[],n(t.getAttribute(&#x22;minlat&#x22;),t.getAttribute(&#x22;minlon
+&#x22;),1),n(t.getAttribute(&#x22;maxlat&#x22;),t.getAttribute(&#x22;minlon&#x22;),2),n(t.getAttribute(&#x22;maxlat&#x22;),t.getAttribute(&#x22;maxlon&#x22;),3),n(t.getAttribute
+(&#x22;minlat&#x22;),t.getAttribute(&#x22;maxlon&#x22;),4),r.nodes.push(r.nodes[0]),r.__is_bounds_placeholder=!0,l.push(r)}function a(e,t){function
+n(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};return u.push(r),r.id}o.isArray(e.nodes)||(e.nodes=[],o.each(t,function(t,n){e.nodes
+.push(&#x22;_anonymous@&#x22;+t.getAttribute(&#x22;lat&#x22;)+&#x22;/&#x22;+t.getAttribute(&#x22;lon&#x22;))})),o.each(t,function(t,r){t.getAttribute(&#x22;lat&#x22;)&#x26;&#x26;n(t.getAttribute
+(&#x22;lat&#x22;),t.getAttribute(&#x22;lon&#x22;),e.nodes[r])})}function i(e,t){function n(e,t,n){var r={type:&#x22;node&#x22;,id:n,lat:e,lon:t};u.push(r)}function
+ r(e,t){function n(e,t){var n={type:&#x22;node&#x22;,id:&#x22;_anonymous@&#x22;+e+&#x22;/&#x22;+t,lat:e,lon:t};r.nodes.push(n.id),u.push(n)}if(!l.some(function
+(e){return&#x22;way&#x22;==e.type&#x26;&#x26;e.id==t})){var r={type:&#x22;way&#x22;,id:t,nodes:[]};o.each(e,function(e){e.getAttribute(&#x22;lat&#x22;)?n(e.getAttribute
+(&#x22;lat&#x22;),e.getAttribute(&#x22;lon&#x22;)):r.nodes.push(void 0)}),l.push(r)}}o.each(t,function(t,o){&#x22;node&#x22;==e.members[o].type?t.getAttribute
+(&#x22;lat&#x22;)&#x26;&#x26;n(t.getAttribute(&#x22;lat&#x22;),t.getAttribute(&#x22;lon&#x22;),e.members[o].ref):&#x22;way&#x22;==e.members[o].type&#x26;&#x26;t.getElementsByTagName(&#x22;nd&#x22;).
+length&#x3e;0&#x26;&#x26;(e.members[o].ref=&#x22;_fullGeom&#x22;+e.members[o].ref,r(t.getElementsByTagName(&#x22;nd&#x22;),e.members[o].ref))})}var u=new Array,l=new
+ Array,c=new Array;o.each(e.getElementsByTagName(&#x22;node&#x22;),function(e,n){var r={};o.each(e.getElementsByTagName(&#x22;tag&#x22;),function(e){
+r[e.getAttribute(&#x22;k&#x22;)]=e.getAttribute(&#x22;v&#x22;)});var a={type:&#x22;node&#x22;};t(e,a,&#x22;id&#x22;),t(e,a,&#x22;lat&#x22;),t(e,a,&#x22;lon&#x22;),t(e,a,&#x22;version&#x22;),t(e,a,&#x22;timestamp
+&#x22;),t(e,a,&#x22;changeset&#x22;),t(e,a,&#x22;uid&#x22;),t(e,a,&#x22;user&#x22;),o.isEmpty(r)||(a.tags=r),u.push(a)});var f,p;return o.each(e.getElementsByTagName
+(&#x22;way&#x22;),function(e,i){var u={},s=[];o.each(e.getElementsByTagName(&#x22;tag&#x22;),function(e){u[e.getAttribute(&#x22;k&#x22;)]=e.getAttribute(&#x22;v&#x22;)});
+var c=!1;o.each(e.getElementsByTagName(&#x22; ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.osmtogeojson.parse_osmxml" id="apidoc.module.osmtogeojson.parse_osmxml">module osmtogeojson.parse_osmxml</a></h1>
+
+
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.parse_osmxml.getJSON" id="apidoc.element.osmtogeojson.parse_osmxml.getJSON">
+        function <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>getJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getJSON = function () {
+    return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.parse_osmxml.parseFromString" id="apidoc.element.osmtogeojson.parse_osmxml.parseFromString">
+        function <span class="apidocSignatureSpan">osmtogeojson.parse_osmxml.</span>parseFromString
+        <span class="apidocSignatureSpan">(xml_str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseFromString = function (xml_str) { p.write(xml_str); p.end(); return json; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.osmtogeojson.toGeojson" id="apidoc.module.osmtogeojson.toGeojson">module osmtogeojson.toGeojson</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.osmtogeojson.toGeojson.toGeojson" id="apidoc.element.osmtogeojson.toGeojson.toGeojson">
+        function <span class="apidocSignatureSpan">osmtogeojson.</span>toGeojson
+        <span class="apidocSignatureSpan">( data, options, featureCallback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toGeojson = function ( data, options, featureCallback ) {
+
+  options = _.merge(
+    {
+      verbose: false,
+      flatProperties: true,
+      uninterestingTags: {
+        &#x22;source&#x22;: true,
+        &#x22;source_ref&#x22;: true,
+        &#x22;source:ref&#x22;: true,
+        &#x22;history&#x22;: true,
+        &#x22;attribution&#x22;: true,
+        &#x22;created_by&#x22;: true,
+        &#x22;tiger:county&#x22;: true,
+        &#x22;tiger:tlid&#x22;: true,
+        &#x22;tiger:upload_uuid&#x22;: true
+      },
+      polygonFeatures: polygonFeatures,
+      deduplicator: default_deduplicator
+    },
+    options
+  );
+
+  var result;
+  if ( ((typeof XMLDocument !== &#x22;undefined&#x22;) &#x26;&#x26; data instanceof XMLDocument ||
+        (typeof XMLDocument === &#x22;undefined&#x22;) &#x26;&#x26; data.childNodes) )
+    result = _osmXML2geoJSON(data);
+  else
+    result = _overpassJSON2geoJSON(data);
+  return result;
+
+  function _overpassJSON2geoJSON(json) {
+    // sort elements
+    var nodes = new Array();
+    var ways  = new Array();
+    var rels  = new Array();
+    // helper functions
+    function centerGeometry(object) {
+      var pseudoNode = _.clone(object);
+      pseudoNode.lat = object.center.lat;
+      pseudoNode.lon = object.center.lon;
+      pseudoNode.__is_center_placeholder = true;
+      nodes.push(pseudoNode);
+    }
+    function boundsGeometry(object) {
+      var pseudoWay = _.clone(object);
+      pseudoWay.nodes = [];
+      function addPseudoNode(lat,lon,i) {
+        var pseudoNode = {
+          type:&#x22;node&#x22;,
+          id:  &#x22;_&#x22;+pseudoWay.type+&#x22;/&#x22;+pseudoWay.id+&#x22;bounds&#x22;+i,
+          lat: lat,
+          lon: lon
+        }
+        pseudoWay.nodes.push(pseudoNode.id);
+        nodes.push(pseudoNode);
+      }
+      addPseudoNode(pseudoWay.bounds.minlat,pseudoWay.bounds.minlon,1);
+      addPseudoNode(pseudoWay.bounds.maxlat,pseudoWay.bounds.minlon,2);
+      addPseudoNode(pseudoWay.bounds.maxlat,pseudoWay.bounds.maxlon,3);
+      addPseudoNode(pseudoWay.bounds.minlat,pseudoWay.bounds.maxlon,4);
+      pseudoWay.nodes.push(pseudoWay.nodes[0]);
+      pseudoWay.__is_bounds_placeholder = true;
+      ways.push(pseudoWay);
+    }
+    function fullGeometryWay(way) {
+      function addFullGeometryNode(lat,lon,id) {
+        var geometryNode = {
+          type:&#x22;node&#x22;,
+          id:  id,
+          lat: lat,
+          lon: lon
+        }
+        nodes.push(geometryNode);
+      }
+      if (!_.isArray(way.nodes)) {
+        way.nodes = way.geometry.map(function(nd) {
+          if (nd !== null) // have to skip ref-less nodes
+            return &#x22;_anonymous@&#x22;+nd.lat+&#x22;/&#x22;+nd.lon;
+          else
+            return &#x22;_anonymous@unknown_location&#x22;;
+        });
+      }
+      way.geometry.forEach(function(nd, i) {
+        if (nd) {
+          addFullGeometryNode(
+            nd.lat,
+            nd.lon,
+            way.nodes[i]
+          );
+        }
+      });
+    }
+    function fullGeometryRelation(rel) {
+      function addFullGeometryNode(lat,lon,id) {
+        var geometryNode = {
+          type:&#x22;node&#x22;,
+          id:  id,
+          lat: lat,
+          lon: lon
+        }
+        nodes.push(geometryNode);
+      }
+      function addFullGeometryWay(geometry,id) {
+        // shared multipolygon ways cannot be defined multiple times with the same id.
+        if (ways.some(function (way) { // todo: this is slow :(
+          return way.type == &#x22;way&#x22; &#x26;&#x26; way.id == id;
+        })) return;
+        var geometryWay = {
+          type: &#x22;way&#x22;,
+          id:   id,
+          nodes:[]
+        }
+        function addFullGeometryWayPseudoNode(lat,lon) {
+          // todo? do not save the same pseudo node multiple times
+          var geometryPseudoNode = {
+            type:&#x22;node&#x22;,
+            id:  &#x22;_anonymous@&#x22;+lat+&#x22;/&#x22;+lon,
+            lat: lat,
+            lon: lon
+          }
+          geometryWay.nodes.push(geometryPseudoNode.id);
+          nodes.push(geometryPseudoNode);
+        }
+        geometry.forEach(function(nd) {
+          if (nd) {
+            addFullGeometryWayPseudoNode(
+              nd.lat,
+              nd.lon
+            );
+          } else {
+            geometryWay.nodes.push(undefined);
+          }
+        });
+        ways.push(geometryWay);
+      }
+      rel.members.forEach(function(member, i) ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
